@@ -30,32 +30,48 @@ namespace Phase2App
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.panel1.SuspendLayout();
+            this.btnStudent = new System.Windows.Forms.Button();
+            this.btnTeacher = new System.Windows.Forms.Button();
+            this.departmentBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(651, 35);
+            this.panel1.Size = new System.Drawing.Size(651, 51);
             this.panel1.TabIndex = 0;
             // 
-            // linkLabel1
+            // btnStudent
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.LightCyan;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(110, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(49, 17);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Home";
+            this.btnStudent.Location = new System.Drawing.Point(110, 129);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Size = new System.Drawing.Size(96, 60);
+            this.btnStudent.TabIndex = 1;
+            this.btnStudent.Text = "STUDENT";
+            this.btnStudent.UseVisualStyleBackColor = true;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
+            // 
+            // btnTeacher
+            // 
+            this.btnTeacher.Location = new System.Drawing.Point(256, 129);
+            this.btnTeacher.Name = "btnTeacher";
+            this.btnTeacher.Size = new System.Drawing.Size(96, 60);
+            this.btnTeacher.TabIndex = 2;
+            this.btnTeacher.Text = "TEACHER";
+            this.btnTeacher.UseVisualStyleBackColor = true;
+            this.btnTeacher.Click += new System.EventHandler(this.btnTeacher_Click);
+            // 
+            // departmentBtn
+            // 
+            this.departmentBtn.Location = new System.Drawing.Point(410, 129);
+            this.departmentBtn.Name = "departmentBtn";
+            this.departmentBtn.Size = new System.Drawing.Size(96, 60);
+            this.departmentBtn.TabIndex = 3;
+            this.departmentBtn.Text = "DEPARTMENT";
+            this.departmentBtn.UseVisualStyleBackColor = true;
+            this.departmentBtn.Click += new System.EventHandler(this.departmentBtn_Click);
             // 
             // Home
             // 
@@ -63,13 +79,14 @@ namespace Phase2App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(650, 350);
+            this.Controls.Add(this.departmentBtn);
+            this.Controls.Add(this.btnTeacher);
+            this.Controls.Add(this.btnStudent);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -77,6 +94,8 @@ namespace Phase2App
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnStudent;
+        private System.Windows.Forms.Button btnTeacher;
+        private System.Windows.Forms.Button departmentBtn;
     }
 }

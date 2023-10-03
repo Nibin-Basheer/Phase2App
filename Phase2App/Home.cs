@@ -16,5 +16,27 @@ namespace Phase2App
         {
             InitializeComponent();
         }
+
+        private void btnStudent_Click(object sender, EventArgs e)
+        {
+            Student obj = new Student();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void btnTeacher_Click(object sender, EventArgs e)
+        {
+            Teacher obj = new Teacher();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void departmentBtn_Click(object sender, EventArgs e)
+        {
+            Department obj = new Department();
+            obj.Show();
+            this.Hide();
+
+        }
     }
 }
