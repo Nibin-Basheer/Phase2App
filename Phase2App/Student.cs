@@ -18,6 +18,7 @@ namespace Phase2App
         public Student()
         {
             InitializeComponent();
+            ShowStudents();
             
                 string query = "SELECT * FROM Tbl_Departments";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
@@ -30,6 +31,16 @@ namespace Phase2App
 
 
            
+        }
+        private void ShowStudents()
+        {
+            string sel = "SELECT * FROM Tbl_Students";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(sel, con);
+            da.Fill(ds);
+            dataGridViewStudentList.DataSource = ds.Tables[0];
+
+
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -65,6 +76,8 @@ namespace Phase2App
                 label9.Text = "Inserted";
                 label9.Visible = true;
             }
+            ShowStudents();
+
 
 
         }

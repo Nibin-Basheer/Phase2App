@@ -41,11 +41,11 @@ namespace Phase2App
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 352);
+            this.panel1.Size = new System.Drawing.Size(316, 352);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -53,7 +53,7 @@ namespace Phase2App
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(3, 138);
+            this.label1.Location = new System.Drawing.Point(23, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 17);
             this.label1.TabIndex = 0;
@@ -108,7 +108,7 @@ namespace Phase2App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(650, 350);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.loginBtn);

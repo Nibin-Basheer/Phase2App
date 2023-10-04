@@ -37,7 +37,7 @@ namespace Phase2App
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(651, 51);
@@ -77,7 +77,7 @@ namespace Phase2App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(650, 350);
             this.Controls.Add(this.departmentBtn);
             this.Controls.Add(this.btnTeacher);
