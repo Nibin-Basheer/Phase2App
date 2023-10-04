@@ -18,9 +18,9 @@ namespace Phase2App
         public Department()
         {
             InitializeComponent();
-            ShowDepartmets();
+            ShowDepartments();
         }
-        private void ShowDepartmets()
+        private void ShowDepartments()
         {
             string sel = "SELECT * FROM Tbl_Departments";
             DataSet ds = new DataSet();
@@ -43,7 +43,7 @@ namespace Phase2App
             {
                 MessageBox.Show("Inserted...!");
             }
-            ShowDepartmets();
+            ShowDepartments();
         }
         int key = 0;
         private void dataGridViewDepartmentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,8 +62,19 @@ namespace Phase2App
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            ShowDepartmets();
+            ShowDepartments();
             MessageBox.Show("Updated...!");
+        }
+
+        private void buttonDeleteDepartment_Click(object sender, EventArgs e)
+        {
+            string del = "DELETE FROM Tbl_Departments WHERE DepartmentId=" + key + "";
+            SqlCommand cmd = new SqlCommand(del, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            ShowDepartments();
+            MessageBox.Show("Deleted...!");
         }
     }
 }

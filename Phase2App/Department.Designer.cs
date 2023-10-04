@@ -64,6 +64,7 @@ namespace Phase2App
             this.buttonDeleteDepartment.TabIndex = 39;
             this.buttonDeleteDepartment.Text = "Delete";
             this.buttonDeleteDepartment.UseVisualStyleBackColor = true;
+            this.buttonDeleteDepartment.Click += new System.EventHandler(this.buttonDeleteDepartment_Click);
             // 
             // buttonUpdateDepartment
             // 
@@ -96,6 +97,7 @@ namespace Phase2App
             // dataGridViewDepartmentList
             // 
             this.dataGridViewDepartmentList.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDepartmentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDepartmentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDepartmentList.Location = new System.Drawing.Point(312, 144);
             this.dataGridViewDepartmentList.Name = "dataGridViewDepartmentList";

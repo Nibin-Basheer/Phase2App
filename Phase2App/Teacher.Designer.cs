@@ -224,6 +224,7 @@ namespace Phase2App
             // dataGridViewTeacherList
             // 
             this.dataGridViewTeacherList.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewTeacherList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewTeacherList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTeacherList.Location = new System.Drawing.Point(251, 89);
             this.dataGridViewTeacherList.Name = "dataGridViewTeacherList";

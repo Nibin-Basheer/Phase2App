@@ -38,14 +38,15 @@ namespace Phase2App
             cmd.Connection = con;
             cmd.CommandText = "sp_DBInsert";
             cmd.CommandType = CommandType.StoredProcedure;
+
             //input
             cmd.Parameters.AddWithValue("@StudentName", textBoxName.Text);
-            cmd.Parameters.AddWithValue("@DepartmentId", comboBoxDepartment.SelectedValue);
-            cmd.Parameters.AddWithValue("@Dob", dateTimePickerDob.Value);
+            cmd.Parameters.AddWithValue("@DepartmentId",comboBoxDepartment.SelectedValue);
+            cmd.Parameters.AddWithValue("@Dob", dateTimePickerDob.Value.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@Address", richTextBoxAddress.Text);
             cmd.Parameters.AddWithValue("@Phone", textBoxPhone.Text);
             cmd.Parameters.AddWithValue("@Email", textBoxEmail.Text);
-            cmd.Parameters.AddWithValue("@AdmissionDate", dateTimePickerAdmDate.Value);
+            cmd.Parameters.AddWithValue("@AdmissionDate", dateTimePickerAdmDate.Value.ToString("yyyy-MM-dd"));
 
             //output
             SqlParameter sp = new SqlParameter();
