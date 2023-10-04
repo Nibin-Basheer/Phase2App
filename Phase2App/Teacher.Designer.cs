@@ -29,6 +29,7 @@ namespace Phase2App
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonDeleteTeacher = new System.Windows.Forms.Button();
             this.buttonUpdateTeacher = new System.Windows.Forms.Button();
             this.buttonAddTeacher = new System.Windows.Forms.Button();
@@ -49,7 +50,19 @@ namespace Phase2App
             this.dateTimePickerJoinDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridViewTeacherList = new System.Windows.Forms.DataGridView();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPhone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderAddress = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacherList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPhone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDeleteTeacher
@@ -88,6 +101,7 @@ namespace Phase2App
             this.textBox3Email.Name = "textBox3Email";
             this.textBox3Email.Size = new System.Drawing.Size(124, 20);
             this.textBox3Email.TabIndex = 33;
+            this.textBox3Email.Validating += new System.ComponentModel.CancelEventHandler(this.textBox3Email_Validating);
             // 
             // label6
             // 
@@ -123,6 +137,7 @@ namespace Phase2App
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(124, 20);
             this.textBoxPhone.TabIndex = 29;
+            this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPhone_Validating);
             // 
             // label4
             // 
@@ -151,6 +166,7 @@ namespace Phase2App
             this.richTextBoxAddress.Size = new System.Drawing.Size(124, 43);
             this.richTextBoxAddress.TabIndex = 26;
             this.richTextBoxAddress.Text = "";
+            this.richTextBoxAddress.Validating += new System.ComponentModel.CancelEventHandler(this.richTextBoxAddress_Validating);
             // 
             // dateTimePickerDob
             // 
@@ -158,6 +174,7 @@ namespace Phase2App
             this.dateTimePickerDob.Name = "dateTimePickerDob";
             this.dateTimePickerDob.Size = new System.Drawing.Size(124, 20);
             this.dateTimePickerDob.TabIndex = 25;
+            this.dateTimePickerDob.ValueChanged += new System.EventHandler(this.dateTimePickerDob_ValueChanged);
             // 
             // label1
             // 
@@ -185,10 +202,13 @@ namespace Phase2App
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(124, 20);
             this.textBoxName.TabIndex = 22;
+            this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxName_KeyPress);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(817, 33);
@@ -232,12 +252,67 @@ namespace Phase2App
             this.dataGridViewTeacherList.TabIndex = 0;
             this.dataGridViewTeacherList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTeacherList_CellContentClick);
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(669, 9);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(49, 17);
+            this.linkLabel2.TabIndex = 3;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Home";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(745, 9);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(58, 17);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Logout";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(247, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 20);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Teachers List";
+            // 
+            // errorProviderEmail
+            // 
+            this.errorProviderEmail.ContainerControl = this;
+            // 
+            // errorProviderPhone
+            // 
+            this.errorProviderPhone.ContainerControl = this;
+            // 
+            // errorProviderName
+            // 
+            this.errorProviderName.ContainerControl = this;
+            // 
+            // errorProviderAddress
+            // 
+            this.errorProviderAddress.ContainerControl = this;
+            // 
             // Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(815, 554);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridViewTeacherList);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimePickerJoinDate);
@@ -262,7 +337,13 @@ namespace Phase2App
             this.Name = "Teacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacherList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPhone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +370,12 @@ namespace Phase2App
         private System.Windows.Forms.DateTimePicker dateTimePickerJoinDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridViewTeacherList;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ErrorProvider errorProviderEmail;
+        private System.Windows.Forms.ErrorProvider errorProviderPhone;
+        private System.Windows.Forms.ErrorProvider errorProviderName;
+        private System.Windows.Forms.ErrorProvider errorProviderAddress;
     }
 }

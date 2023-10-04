@@ -76,5 +76,34 @@ namespace Phase2App
             ShowDepartments();
             MessageBox.Show("Deleted...!");
         }
+
+        private void textBoxName_Validating(object sender, CancelEventArgs e)
+        {
+            string userInput = textBoxName.Text;
+            if(string.IsNullOrWhiteSpace(userInput))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBoxName, "This field cannot be empty");
+            }
+            else
+            {
+                errorProvider1.SetError(textBoxName, "");
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home obj = new Home();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            this.Hide();
+
+        }
     }
 }

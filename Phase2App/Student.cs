@@ -19,7 +19,7 @@ namespace Phase2App
         {
             InitializeComponent();
             
-                string query = "SELECT DepartmentName FROM Tbl_Departments";
+                string query = "SELECT * FROM Tbl_Departments";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -69,8 +69,18 @@ namespace Phase2App
 
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            this.Hide();
+        }
 
-
-
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home obj = new Home();
+            obj.Show();
+            this.Hide();
+        }
     }
 }
